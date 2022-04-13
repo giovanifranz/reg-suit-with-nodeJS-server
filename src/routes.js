@@ -1,5 +1,6 @@
 import config from "./config.js";
 import { Controller } from "./controller.js";
+import { logger } from "./util.js";
 
 const { CONTENT_TYPE } = config;
 
@@ -30,12 +31,12 @@ async function routes(request, response) {
 
 function handleError(error, response) {
   if (error.message.includes("ENOENT")) {
-    console.warn(`asset not found ${error.stack}`);
+    logger.warn(`asset not found ${error.stack}`);
     response.writeHead(404);
     return response.end();
   }
 
-  console.error(`caught error on API ${error.stack}`);
+  logger.error(`caught error on API ${error.stack}`);
   response.writeHead(500);
   return response.end();
 }
