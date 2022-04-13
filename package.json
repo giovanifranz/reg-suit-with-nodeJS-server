@@ -24,6 +24,7 @@
     "storycap": "^3.1.7"
   },
   "dependencies": {
+    "dotenv": "^16.0.0",
     "pino": "^7.10.0",
     "pino-pretty": "^7.6.1"
   }
