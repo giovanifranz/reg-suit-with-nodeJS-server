@@ -20,7 +20,7 @@ export class Service {
   }
 
   async getFileStream(file) {
-    const { name, type } = await this.getFileInfo(decodeURIComponent(file));
+    const { name, type } = await this.getFileInfo(file);
     return {
       stream: this.createFileStream(name),
       type,
