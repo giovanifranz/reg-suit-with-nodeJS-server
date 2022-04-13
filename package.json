@@ -1,0 +1,30 @@
+{
+  "name": "reg-suit-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "screenshot": "npx storycap http://localhost:6006",
+    "visual-testing:test": "reg-suit run --test",
+    "visual-testing": "reg-suit run",
+    "reg-suit:prepare": "reg-suit prepare",
+    "reg-suit:run": "reg-suit run",
+    "reg-suit:init": "reg-suit init",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "reg-keygen-git-hash-plugin": "^0.11.1",
+    "reg-notify-gitlab-plugin": "^0.11.1",
+    "reg-publish-s3-plugin": "^0.11.0",
+    "reg-suit": "^0.11.1",
+    "storycap": "^3.1.7"
+  },
+  "dependencies": {
+    "pino": "^7.10.0",
+    "pino-pretty": "^7.6.1"
+  }
+}
