@@ -2,7 +2,7 @@ import fs from "fs";
 import fsPromises from "fs/promises";
 import config from "./config.js";
 import { join, extname } from "path";
-const { publicDirectory } = config;
+const { regDirectory } = config;
 
 export class Service {
   createFileStream(filename) {
@@ -10,7 +10,7 @@ export class Service {
   }
 
   async getFileInfo(file) {
-    const fullFilePath = join(publicDirectory, decodeURIComponent(file));
+    const fullFilePath = join(regDirectory, decodeURIComponent(file));
     await fsPromises.access(fullFilePath);
     const fileType = extname(fullFilePath);
     return {
